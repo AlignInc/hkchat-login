@@ -94,46 +94,46 @@ const translations = {
 <table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm">
 <thead class="bg-gray-50">
 <tr>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">資料類別</th>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">具體內容</th>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">收集方式 / 來源</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">资料类别</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">具体内容</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">收集方式 / 来源</th>
 </tr>
 </thead>
 <tbody>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">身份識別資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">姓名、身分證明文件號碼（如適用）、智方便登入識別符、用戶名、年齡、監護人資料（如屬未成年人）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下在註冊、身份驗證或使用本服務時主動提供</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">身份识别资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">姓名、身份证明文件号码（如适用）、智方便登录识别符、用户名、年龄、监护人资料（如属未成年人）</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下在注册、身份验证或使用本服务时主动提供</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">聯絡資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">電子郵件、電話號碼、通訊地址</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動提供</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">联系资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">电子邮件、电话号码、通讯地址</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下主动提供</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">裝置與技術資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">IP 位址、裝置型號、操作系統、瀏覽器類型、設備語言、裝置識別碼、崩潰日誌</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">透過 Cookies、SDK 或伺服器日誌自動收集</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">设备与技术资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">IP 地址、设备型号、操作系统、浏览器类型、设备语言、设备识别码、崩溃日志</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">透过 Cookies、SDK 或服务器日志自动收集</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服務使用資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">聊天指令（輸入內容）、模型回應（輸出內容）、操作記錄、登入時間戳</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">於閣下使用服務過程中自動生成</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服务使用资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">聊天指令（输入内容）、模型回应（输出内容）、操作记录、登录时间戳</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">于阁下使用服务过程中自动生成</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">交易與付款資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">信用卡號末四位、付款流水號、結算明細（如適用）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">由第三方支付服務商收集後傳遞</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">交易与付款资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">信用卡号末四位、付款流水号、结算明细（如适用）</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">由第三方支付服务商收集后传递</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">位置資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">基於 IP 或裝置 GPS 歸納之粗略地理位置</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下允許定位服務或於網絡請求中自動取得</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">位置资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">基于 IP 或设备 GPS 归纳之粗略地理位置</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下允许定位服务或于网络请求中自动取得</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">行銷偏好資料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">訂閱狀態、推廣活動互動紀錄</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動選擇或使用服務過程中生成</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">营销偏好资料</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">订阅状态、推广活动互动记录</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下主动选择或使用服务过程中生成</td>
 </tr>
 </tbody>
 </table>
