@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { Eye, EyeOff, Smartphone, User } from 'lucide-react';
+import { Eye, EyeOff, Smartphone } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import { useLanguage } from '@/hooks/useLanguage';
 import LegalModal from '@/components/LegalModal';
@@ -219,18 +218,15 @@ const Index = () => {
                   <Label htmlFor="name" className={`text-sm font-medium text-gray-700 ${language === 'en' ? '' : 'font-source-han-sans'}`}>
                     {t('register.name')}
                   </Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <Input
-                      id="name"
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className={`w-full pl-10 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${language === 'en' ? '' : 'font-source-han-sans'}`}
-                      placeholder={t('register.name.placeholder')}
-                      aria-describedby={nameError ? "name-error" : undefined}
-                    />
-                  </div>
+                  <Input
+                    id="name"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors ${language === 'en' ? '' : 'font-source-han-sans'}`}
+                    placeholder={t('register.name.placeholder')}
+                    aria-describedby={nameError ? "name-error" : undefined}
+                  />
                   {nameError && (
                     <p id="name-error" className={`text-red-600 text-sm ${language === 'en' ? '' : 'font-source-han-sans'}`} role="alert">
                       {nameError}
