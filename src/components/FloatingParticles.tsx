@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 const FloatingParticles: React.FC = () => {
@@ -27,66 +28,105 @@ const FloatingParticles: React.FC = () => {
       vy: number;
       size: number;
       opacity: number;
-      color: string;
+      hue: number;
+      phase: number;
     }> = [];
 
-    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'];
-
-    // Create particles
-    for (let i = 0; i < 50; i++) {
+    // 创建更少但更精致的粒子
+    for (let i = 0; i < 25; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.5 + 0.2,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.3 + 0.1,
+        hue: Math.random() * 60 + 200, // 蓝紫色调
+        phase: Math.random() * Math.PI * 2
       });
     }
 
+    let time = 0;
+
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.005;
+      
+      // 使用淡雅的背景清除，创造轨迹效果
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((particle) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+      particles.forEach((particle, index) => {
+        // 更有机的移动模式
+        particle.x += particle.vx + Math.sin(time + particle.phase) * 0.2;
+        particle.y += particle.vy + Math.cos(time + particle.phase * 1.5) * 0.15;
 
-        // Bounce off edges
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        // 边界处理 - 柔和的反弹
+        if (particle.x < 0 || particle.x > canvas.width) {
+          particle.vx *= -0.8;
+          particle.x = Math.max(0, Math.min(canvas.width, particle.x));
+        }
+        if (particle.y < 0 || particle.y > canvas.height) {
+          particle.vy *= -0.8;
+          particle.y = Math.max(0, Math.min(canvas.height, particle.y));
+        }
 
-        // Keep particles in bounds
-        particle.x = Math.max(0, Math.min(canvas.width, particle.x));
-        particle.y = Math.max(0, Math.min(canvas.height, particle.y));
+        // 呼吸效果
+        const breathe = Math.sin(time * 2 + particle.phase) * 0.3 + 0.7;
+        const currentSize = particle.size * breathe;
+        const currentOpacity = particle.opacity * breathe;
+
+        // 渐变粒子
+        const gradient = ctx.createRadialGradient(
+          particle.x, particle.y, 0,
+          particle.x, particle.y, currentSize * 3
+        );
+        
+        gradient.addColorStop(0, `hsla(${particle.hue}, 70%, 80%, ${currentOpacity})`);
+        gradient.addColorStop(0.5, `hsla(${particle.hue}, 60%, 70%, ${currentOpacity * 0.5})`);
+        gradient.addColorStop(1, `hsla(${particle.hue}, 50%, 60%, 0)`);
 
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
-        ctx.globalAlpha = particle.opacity;
+        ctx.arc(particle.x, particle.y, currentSize * 3, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+
+        // 核心亮点
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, currentSize, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${particle.hue}, 80%, 90%, ${currentOpacity * 0.8})`;
         ctx.fill();
       });
 
-      // Draw connections
+      // 绘制更优雅的连接线
       particles.forEach((particle, i) => {
         particles.slice(i + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 150) {
+            const opacity = (1 - distance / 150) * 0.15;
+            
+            // 渐变连接线
+            const gradient = ctx.createLinearGradient(
+              particle.x, particle.y,
+              otherParticle.x, otherParticle.y
+            );
+            
+            gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 75%, ${opacity})`);
+            gradient.addColorStop(0.5, `hsla(${(particle.hue + otherParticle.hue) / 2}, 65%, 80%, ${opacity * 1.5})`);
+            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 60%, 75%, ${opacity})`);
+
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = '#E0E0E0';
-            ctx.globalAlpha = 0.1 * (1 - distance / 100);
+            ctx.strokeStyle = gradient;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         });
       });
 
-      ctx.globalAlpha = 1;
       animationFrameId = requestAnimationFrame(animate);
     };
 

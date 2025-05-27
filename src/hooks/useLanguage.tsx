@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'zh-HK' | 'zh-CN' | 'en';
@@ -53,12 +52,12 @@ const translations = {
     'legal.and': '及',
     
     // Footer
-    'footer.copyright': '© 2024 HKGAI 版權所有',
+    'footer.copyright': '© 2025 香港生成式人工智能研發中心 版權所有',
     
     // Terms of Service
     'terms.title': '服務條款',
     'terms.content': `1. 服務說明
-港話通是由HKGAI提供的生成式人工智能服務平台。
+港話通是由香港生成式人工智能研發中心提供的生成式人工智能服務平台。
 
 2. 用戶責任
 用戶需確保提供的信息準確無誤，並承諾不會濫用本服務。
@@ -155,12 +154,12 @@ const translations = {
     'legal.and': '及',
     
     // Footer
-    'footer.copyright': '© 2024 HKGAI 版权所有',
+    'footer.copyright': '© 2025 香港生成式人工智能研发中心 版权所有',
     
     // Terms of Service
     'terms.title': '服务条款',
     'terms.content': `1. 服务说明
-港话通是由HKGAI提供的生成式人工智能服务平台。
+港话通是由香港生成式人工智能研发中心提供的生成式人工智能服务平台。
 
 2. 用户责任
 用户需确保提供的信息准确无误，并承诺不会滥用本服务。
@@ -218,14 +217,14 @@ const translations = {
   
   'en': {
     // Header
-    'app.name': 'HK DialogFlow',
+    'app.name': 'HKChat',
     'language.zh-hk': '繁',
     'language.zh-cn': '简',
     'language.en': 'EN',
     
     // Login Form
     'login.welcome': 'Welcome Back',
-    'login.subtitle': 'Sign in to your HK DialogFlow account',
+    'login.subtitle': 'Sign in to your HKChat account',
     'login.email': 'Email Address',
     'login.email.placeholder': 'Enter your email address',
     'login.password': 'Password',
@@ -240,7 +239,7 @@ const translations = {
     'register.no.account': "Don't have an account?",
     'register.link': 'Sign up now',
     'register.title': 'Create New Account',
-    'register.subtitle': 'Join the HK DialogFlow community',
+    'register.subtitle': 'Join the HKChat community',
     'register.name': 'Full Name',
     'register.name.placeholder': 'Enter your full name',
     'register.confirm.password': 'Confirm Password',
@@ -257,12 +256,12 @@ const translations = {
     'legal.and': 'and',
     
     // Footer
-    'footer.copyright': '© 2024 HKGAI. All rights reserved.',
+    'footer.copyright': '© 2025 Hong Kong Generative AI Research and Development Center. All rights reserved.',
     
     // Terms of Service
     'terms.title': 'Terms of Service',
     'terms.content': `1. Service Description
-HK DialogFlow is a generative AI service platform provided by HKGAI.
+HKChat is a generative AI service platform provided by Hong Kong Generative AI Research and Development Center.
 
 2. User Responsibilities
 Users must ensure the accuracy of provided information and promise not to misuse this service.
@@ -309,9 +308,9 @@ For privacy-related questions, please contact our customer service team.`,
     
     // Success Messages
     'success.login': 'Login Successful',
-    'success.login.description': 'Redirecting to HK DialogFlow services...',
+    'success.login.description': 'Redirecting to HKChat services...',
     'success.register': 'Registration Successful',
-    'success.register.description': 'Welcome to HK DialogFlow!',
+    'success.register.description': 'Welcome to HKChat!',
     
     // iAM Smart
     'iamsmart.connecting': 'Connecting to iAM Smart',
