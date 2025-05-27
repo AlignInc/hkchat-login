@@ -29,7 +29,7 @@ const translations = {
     'login.iamsmart': '使用「智方便」登入',
     'login.or': '或',
     'register.title': '建立新帳戶',
-    'register.subtitle': '加入港話通，開始您的AI對話之旅',
+    'register.subtitle': '加入港話通，開始您的未來之旅',
     'register.name': '姓名',
     'register.name.placeholder': '請輸入您的全名',
     'register.confirm.password': '確認密碼',
