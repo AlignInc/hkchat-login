@@ -139,7 +139,7 @@ const translations = {
 </table>
 </div>
 
-<strong class="font-semibold text-gray-900">懷疑精神提醒</strong>：我們只收集實際運營所需資料，若某項資訊看似多餘，請立即與我們聯絡提出質疑。
+我們只收集實際運營所需資料，若某項資訊看似多餘，請立即與我們聯絡提出質疑。
 
 ⸻
 
@@ -190,7 +190,7 @@ const translations = {
 </table>
 </div>
 
-<strong class="font-semibold text-gray-900">實話實說</strong>：我們不會出售您的個人資料，也不允許第三方用於獨立行銷，除非事先獲得明確同意。
+我們不會出售您的個人資料，也不允許第三方用於獨立行銷，除非事先獲得明確同意。
 
 ⸻
 
@@ -392,7 +392,7 @@ const translations = {
 </table>
 </div>
 
-<strong class="font-semibold text-gray-900">怀疑精神提醒</strong>：我们只收集实际运营所需资料，若某项信息看似多余，请立即与我们联系提出质疑。
+我们只收集实际运营所需资料，若某项信息看似多余，请立即与我们联系提出质疑。
 
 ⸻
 
@@ -443,7 +443,7 @@ const translations = {
 </table>
 </div>
 
-<strong class="font-semibold text-gray-900">实话实说</strong>：我们不会出售您的个人资料，也不允许第三方用于独立营销，除非事先获得明确同意。
+我们不会出售您的个人资料，也不允许第三方用于独立营销，除非事先获得明确同意。
 
 ⸻
 
@@ -696,7 +696,7 @@ This document explains how Hong Kong Generative AI Research and Development Cent
 </table>
 </div>
 
-<strong class="font-semibold text-gray-900">Truth be told</strong>: We will not sell your personal data, nor allow third parties to use it for independent marketing unless explicit consent is obtained in advance.
+We will not sell your personal data, nor allow third parties to use it for independent marketing unless explicit consent is obtained in advance.
 
 ⸻
 
