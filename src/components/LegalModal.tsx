@@ -25,150 +25,311 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className={`text-2xl font-bold text-gray-900 mb-6 ${isChinese ? 'font-source-han-sans' : ''}`}>
+          <DialogTitle className={`text-3xl font-bold text-gray-900 mb-8 text-center ${isChinese ? 'font-source-han-sans' : ''}`}>
             {title}
           </DialogTitle>
         </DialogHeader>
-        <div className="mt-6">
+        <div className="mt-8">
+          <style>{`
+            .privacy-policy-content,
+            .terms-content {
+              font-family: ${isChinese ? "'Source Han Sans', system-ui, -apple-system, sans-serif" : "'system-ui', -apple-system, sans-serif"};
+            }
+
+            .policy-section,
+            .terms-section {
+              margin-bottom: 3rem;
+              padding: 2rem;
+              background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+              border-radius: 1rem;
+              border-left: 4px solid #3b82f6;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+              transition: all 0.3s ease;
+            }
+
+            .policy-section:hover,
+            .terms-section:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.15);
+            }
+
+            .policy-section h2,
+            .terms-section h2 {
+              color: #1e40af;
+              font-size: 1.5rem;
+              font-weight: 700;
+              margin-bottom: 1.5rem;
+              padding-bottom: 0.75rem;
+              border-bottom: 2px solid #e2e8f0;
+            }
+
+            .data-table-container {
+              margin: 2rem 0;
+              border-radius: 0.75rem;
+              overflow: hidden;
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+
+            .data-collection-table {
+              width: 100%;
+              border-collapse: collapse;
+              background: white;
+            }
+
+            .data-collection-table thead {
+              background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            }
+
+            .data-collection-table th {
+              padding: 1rem 1.5rem;
+              text-align: left;
+              font-weight: 600;
+              color: white;
+              font-size: 1rem;
+            }
+
+            .data-collection-table td {
+              padding: 1rem 1.5rem;
+              border-bottom: 1px solid #e5e7eb;
+              color: #374151;
+            }
+
+            .data-collection-table tbody tr:nth-child(even) {
+              background-color: #f9fafb;
+            }
+
+            .data-collection-table tbody tr:hover {
+              background-color: #eff6ff;
+              transition: background-color 0.2s ease;
+            }
+
+            .purpose-list,
+            .rights-container {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            }
+
+            .purpose-item,
+            .right-item {
+              background: white;
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              border: 1px solid #e5e7eb;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            }
+
+            .purpose-item:hover,
+            .right-item:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+              border-color: #3b82f6;
+            }
+
+            .purpose-item h3,
+            .right-item h4 {
+              color: #1e40af;
+              font-size: 1.125rem;
+              font-weight: 600;
+              margin-bottom: 0.75rem;
+            }
+
+            .disclosure-grid,
+            .responsibility-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            }
+
+            .disclosure-card,
+            .responsibility-item {
+              background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              border: 1px solid #e2e8f0;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            }
+
+            .disclosure-card:hover,
+            .responsibility-item:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+              border-color: #3b82f6;
+            }
+
+            .disclosure-card h4,
+            .responsibility-item h4 {
+              color: #1e40af;
+              font-size: 1.125rem;
+              font-weight: 600;
+              margin-bottom: 0.75rem;
+            }
+
+            .security-measures {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+              margin: 2rem 0;
+            }
+
+            .measure-item {
+              display: flex;
+              align-items: flex-start;
+              gap: 1rem;
+              background: white;
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              border: 1px solid #e5e7eb;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            }
+
+            .measure-item:hover {
+              transform: translateX(8px);
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              border-color: #3b82f6;
+            }
+
+            .measure-icon {
+              font-size: 1.5rem;
+              flex-shrink: 0;
+            }
+
+            .measure-item h4 {
+              color: #1e40af;
+              font-size: 1.125rem;
+              font-weight: 600;
+              margin-bottom: 0.5rem;
+            }
+
+            .contact-info {
+              background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+              padding: 2rem;
+              border-radius: 0.75rem;
+              border: 1px solid #bfdbfe;
+            }
+
+            .contact-details {
+              margin-top: 1rem;
+              padding: 1rem;
+              background: white;
+              border-radius: 0.5rem;
+              border: 1px solid #e5e7eb;
+            }
+
+            .contact-details p {
+              margin-bottom: 0.5rem;
+              color: #374151;
+            }
+
+            .service-list {
+              list-style: none;
+              padding: 0;
+              margin: 1rem 0;
+            }
+
+            .service-list li {
+              padding: 0.75rem 0;
+              border-bottom: 1px solid #e5e7eb;
+              position: relative;
+              padding-left: 2rem;
+            }
+
+            .service-list li:before {
+              content: "✓";
+              position: absolute;
+              left: 0;
+              color: #10b981;
+              font-weight: bold;
+              font-size: 1.125rem;
+            }
+
+            .prohibited-actions {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+              margin: 2rem 0;
+            }
+
+            .prohibition-item {
+              display: flex;
+              align-items: flex-start;
+              gap: 1rem;
+              background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+              padding: 1.5rem;
+              border-radius: 0.75rem;
+              border: 1px solid #fecaca;
+              transition: all 0.3s ease;
+            }
+
+            .prohibition-item:hover {
+              transform: translateX(8px);
+              box-shadow: 0 4px 8px rgba(239, 68, 68, 0.1);
+            }
+
+            .prohibition-icon {
+              font-size: 1.5rem;
+              flex-shrink: 0;
+            }
+
+            .prohibition-item h4 {
+              color: #dc2626;
+              font-size: 1.125rem;
+              font-weight: 600;
+              margin-bottom: 0.5rem;
+            }
+
+            .disclaimer-box {
+              background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+              padding: 2rem;
+              border-radius: 0.75rem;
+              border: 1px solid #fdba74;
+              border-left: 4px solid #ea580c;
+              margin: 2rem 0;
+            }
+
+            .disclaimer-box p {
+              color: #9a3412;
+              font-weight: 500;
+              margin: 0;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+              .purpose-list,
+              .rights-container,
+              .disclosure-grid,
+              .responsibility-grid {
+                grid-template-columns: 1fr;
+              }
+
+              .policy-section,
+              .terms-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+              }
+
+              .data-collection-table th,
+              .data-collection-table td {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+              }
+            }
+          `}</style>
           <div 
             className={`prose prose-lg max-w-none leading-relaxed text-gray-800 ${isChinese ? 'font-source-han-sans' : 'font-sans'}`}
-            dangerouslySetInnerHTML={{ __html: formatContent(content, isChinese) }}
+            dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
       </DialogContent>
     </Dialog>
   );
-};
-
-const formatContent = (content: string, isChinese: boolean): string => {
-  let formattedContent = content;
-
-  // Format tables for privacy policy
-  if (content.includes('資料類別') || content.includes('Data Category') || content.includes('数据类别')) {
-    // Table 1: Data Categories
-    const tablePattern1 = /(資料類別|Data Category|数据类别)[\s\S]*?(我們只收集|We only collect|我们只收集)/;
-    const match1 = formattedContent.match(tablePattern1);
-    if (match1) {
-      const tableContent = match1[0];
-      const rows = tableContent.split('\n').filter(row => row.trim());
-      let table = '<div class="my-8 overflow-hidden rounded-lg border border-gray-200 shadow-sm"><table class="w-full border-collapse bg-white"><thead class="bg-gradient-to-r from-gray-50 to-gray-100">';
-      
-      // Header row
-      if (isChinese) {
-        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">資料類別</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">具體內容</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">收集方式 / 來源</th></tr>';
-      } else {
-        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Data Category</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Specific Content</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Collection Method / Source</th></tr>';
-      }
-      
-      table += '</thead><tbody>';
-      
-      // Find table rows (lines with tabs or multiple spaces)
-      const dataRows = rows.filter(row => 
-        (row.includes('\t') || row.match(/\s{2,}/)) && 
-        !row.includes('資料類別') && 
-        !row.includes('Data Category') && 
-        !row.includes('数据类别') &&
-        !row.includes('收集方式') &&
-        !row.includes('Collection Method') &&
-        !row.includes('收集方式')
-      );
-      
-      dataRows.forEach((row, index) => {
-        const cells = row.split(/\t+|\s{2,}/).filter(cell => cell.trim());
-        if (cells.length >= 3) {
-          const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
-          table += `<tr class="${bgClass} hover:bg-blue-50 transition-colors duration-200">`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 font-semibold text-gray-900">${cells[0].trim()}</td>`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[1].trim()}</td>`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[2].trim()}</td>`;
-          table += '</tr>';
-        }
-      });
-      
-      table += '</tbody></table></div>';
-      
-      formattedContent = formattedContent.replace(tablePattern1, table + '\n\n$2');
-    }
-
-    // Table 2: Data Sharing
-    const tablePattern2 = /(類別|Category|类别)[\s]*?(目的|Purpose|目的)[\s]*?(保護措施|Protection Measures|保护措施)[\s\S]*?(我們不會|We will not|我们不会)/;
-    const match2 = formattedContent.match(tablePattern2);
-    if (match2) {
-      const tableContent = match2[0];
-      const rows = tableContent.split('\n').filter(row => row.trim());
-      let table = '<div class="my-8 overflow-hidden rounded-lg border border-gray-200 shadow-sm"><table class="w-full border-collapse bg-white"><thead class="bg-gradient-to-r from-gray-50 to-gray-100">';
-      
-      // Header row
-      if (isChinese) {
-        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">類別</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">目的</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">保護措施</th></tr>';
-      } else {
-        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Category</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Purpose</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Protection Measures</th></tr>';
-      }
-      
-      table += '</thead><tbody>';
-      
-      // Find table rows
-      const dataRows = rows.filter(row => 
-        (row.includes('\t') || row.match(/\s{2,}/)) && 
-        !row.includes('類別') && 
-        !row.includes('Category') && 
-        !row.includes('类别') &&
-        !row.includes('目的') &&
-        !row.includes('Purpose') &&
-        !row.includes('保護措施') &&
-        !row.includes('Protection Measures') &&
-        !row.includes('保护措施')
-      );
-      
-      dataRows.forEach((row, index) => {
-        const cells = row.split(/\t+|\s{2,}/).filter(cell => cell.trim());
-        if (cells.length >= 3) {
-          const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
-          table += `<tr class="${bgClass} hover:bg-blue-50 transition-colors duration-200">`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 font-semibold text-gray-900">${cells[0].trim()}</td>`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[1].trim()}</td>`;
-          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[2].trim()}</td>`;
-          table += '</tr>';
-        }
-      });
-      
-      table += '</tbody></table></div>';
-      
-      formattedContent = formattedContent.replace(tablePattern2, table + '\n\n$4');
-    }
-  }
-
-  // Format sections and paragraphs
-  formattedContent = formattedContent
-    // Add section headers styling with better spacing
-    .replace(/^(\d+\.\s+[^\n]+)/gm, '<h2 class="text-xl font-bold text-gray-900 mt-10 mb-6 pb-3 border-b-2 border-blue-100">$1</h2>')
-    // Format subsection headers
-    .replace(/^([a-z]\)\s+[^\n]+)/gm, '<h3 class="text-lg font-semibold text-gray-800 mt-6 mb-4">$1</h3>')
-    // Format numbered lists with better styling
-    .replace(/^(\s*•\s+)/gm, '<li class="ml-6 mb-3 pl-2 relative before:content-["•"] before:text-blue-500 before:font-bold before:absolute before:-left-4">')
-    .replace(/^(\s*\d+\.\s+)/gm, '<li class="ml-6 mb-3 pl-2 list-decimal marker:text-blue-500 marker:font-semibold">')
-    // Format bullet points
-    .replace(/^(\s*-\s+)/gm, '<li class="ml-6 mb-3 pl-2 relative before:content-["-"] before:text-blue-500 before:font-bold before:absolute before:-left-4">')
-    // Format paragraphs with better spacing
-    .replace(/\n\n/g, '</p><p class="mb-6 text-gray-700 leading-relaxed text-base">')
-    // Format bold text
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
-    // Format emphasis
-    .replace(/\*(.*?)\*/g, '<em class="italic text-gray-800">$1</em>')
-    // Format dividers with better styling
-    .replace(/⸻/g, '<hr class="my-10 border-t-2 border-gray-200">')
-    // Clean up formatting issues
-    .replace(/<\/p><p[^>]*>(\s*<h[23])/g, '$1')
-    .replace(/<\/h[23]>\s*<p[^>]*>/g, '</h3>')
-    .replace(/<p[^>]*>\s*<\/p>/g, '')
-    // Add proper list containers
-    .replace(/(<li[^>]*>.*?<\/li>\s*)+/g, '<ul class="space-y-2 mb-6">$&</ul>')
-    // Clean up nested formatting
-    .replace(/<ul[^>]*>\s*<\/ul>/g, '');
-
-  return `<div class="text-gray-700 space-y-4"><p class="mb-6 text-gray-700 leading-relaxed text-base">${formattedContent}</p></div>`;
 };
 
 export default LegalModal;
