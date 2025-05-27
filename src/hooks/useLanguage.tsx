@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface LanguageContextProps {
   language: string;
@@ -26,7 +25,6 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
 };
 
 export const useLanguage = () => {
-  const { i18n } = useTranslation();
   const { language, setLanguage } = useContext(LanguageContext);
 
   const t = (key: string) => {
@@ -34,7 +32,6 @@ export const useLanguage = () => {
   };
 
   const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
     setLanguage(lang);
   };
 
