@@ -25,15 +25,15 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className={`text-xl font-semibold text-gray-900 ${isChinese ? 'font-source-han-sans' : ''}`}>
+          <DialogTitle className={`text-2xl font-bold text-gray-900 mb-6 ${isChinese ? 'font-source-han-sans' : ''}`}>
             {title}
           </DialogTitle>
         </DialogHeader>
-        <div className="mt-4">
+        <div className="mt-6">
           <div 
-            className={`prose prose-sm max-w-none leading-relaxed ${isChinese ? 'font-source-han-sans' : 'font-sans'}`}
+            className={`prose prose-lg max-w-none leading-relaxed text-gray-800 ${isChinese ? 'font-source-han-sans' : 'font-sans'}`}
             dangerouslySetInnerHTML={{ __html: formatContent(content, isChinese) }}
           />
         </div>
@@ -43,7 +43,6 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
 };
 
 const formatContent = (content: string, isChinese: boolean): string => {
-  // Split content into sections
   let formattedContent = content;
 
   // Format tables for privacy policy
@@ -54,13 +53,13 @@ const formatContent = (content: string, isChinese: boolean): string => {
     if (match1) {
       const tableContent = match1[0];
       const rows = tableContent.split('\n').filter(row => row.trim());
-      let table = '<div class="my-6"><table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm"><thead class="bg-gray-50">';
+      let table = '<div class="my-8 overflow-hidden rounded-lg border border-gray-200 shadow-sm"><table class="w-full border-collapse bg-white"><thead class="bg-gradient-to-r from-gray-50 to-gray-100">';
       
       // Header row
       if (isChinese) {
-        table += '<tr><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">資料類別</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">具體內容</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">收集方式 / 來源</th></tr>';
+        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">資料類別</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">具體內容</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">收集方式 / 來源</th></tr>';
       } else {
-        table += '<tr><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Data Category</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Specific Content</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Collection Method / Source</th></tr>';
+        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Data Category</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Specific Content</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Collection Method / Source</th></tr>';
       }
       
       table += '</thead><tbody>';
@@ -80,10 +79,10 @@ const formatContent = (content: string, isChinese: boolean): string => {
         const cells = row.split(/\t+|\s{2,}/).filter(cell => cell.trim());
         if (cells.length >= 3) {
           const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
-          table += `<tr class="${bgClass}">`;
-          table += `<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">${cells[0].trim()}</td>`;
-          table += `<td class="border border-gray-300 px-4 py-3 text-gray-700">${cells[1].trim()}</td>`;
-          table += `<td class="border border-gray-300 px-4 py-3 text-gray-700">${cells[2].trim()}</td>`;
+          table += `<tr class="${bgClass} hover:bg-blue-50 transition-colors duration-200">`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 font-semibold text-gray-900">${cells[0].trim()}</td>`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[1].trim()}</td>`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[2].trim()}</td>`;
           table += '</tr>';
         }
       });
@@ -99,13 +98,13 @@ const formatContent = (content: string, isChinese: boolean): string => {
     if (match2) {
       const tableContent = match2[0];
       const rows = tableContent.split('\n').filter(row => row.trim());
-      let table = '<div class="my-6"><table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm"><thead class="bg-gray-50">';
+      let table = '<div class="my-8 overflow-hidden rounded-lg border border-gray-200 shadow-sm"><table class="w-full border-collapse bg-white"><thead class="bg-gradient-to-r from-gray-50 to-gray-100">';
       
       // Header row
       if (isChinese) {
-        table += '<tr><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">類別</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">目的</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">保護措施</th></tr>';
+        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">類別</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">目的</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">保護措施</th></tr>';
       } else {
-        table += '<tr><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Category</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Purpose</th><th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Protection Measures</th></tr>';
+        table += '<tr><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Category</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Purpose</th><th class="border-b border-gray-200 px-6 py-4 text-left font-bold text-gray-900 text-lg">Protection Measures</th></tr>';
       }
       
       table += '</thead><tbody>';
@@ -127,10 +126,10 @@ const formatContent = (content: string, isChinese: boolean): string => {
         const cells = row.split(/\t+|\s{2,}/).filter(cell => cell.trim());
         if (cells.length >= 3) {
           const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
-          table += `<tr class="${bgClass}">`;
-          table += `<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">${cells[0].trim()}</td>`;
-          table += `<td class="border border-gray-300 px-4 py-3 text-gray-700">${cells[1].trim()}</td>`;
-          table += `<td class="border border-gray-300 px-4 py-3 text-gray-700">${cells[2].trim()}</td>`;
+          table += `<tr class="${bgClass} hover:bg-blue-50 transition-colors duration-200">`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 font-semibold text-gray-900">${cells[0].trim()}</td>`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[1].trim()}</td>`;
+          table += `<td class="border-b border-gray-100 px-6 py-4 text-gray-700">${cells[2].trim()}</td>`;
           table += '</tr>';
         }
       });
@@ -143,25 +142,33 @@ const formatContent = (content: string, isChinese: boolean): string => {
 
   // Format sections and paragraphs
   formattedContent = formattedContent
-    // Add section headers styling
-    .replace(/^(\d+\.\s+[^\n]+)/gm, '<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">$1</h3>')
-    // Format numbered lists
-    .replace(/^(\s*•\s+)/gm, '<li class="ml-4 mb-2">')
-    .replace(/^(\s*\d+\.\s+)/gm, '<li class="ml-4 mb-2 list-decimal">')
+    // Add section headers styling with better spacing
+    .replace(/^(\d+\.\s+[^\n]+)/gm, '<h2 class="text-xl font-bold text-gray-900 mt-10 mb-6 pb-3 border-b-2 border-blue-100">$1</h2>')
+    // Format subsection headers
+    .replace(/^([a-z]\)\s+[^\n]+)/gm, '<h3 class="text-lg font-semibold text-gray-800 mt-6 mb-4">$1</h3>')
+    // Format numbered lists with better styling
+    .replace(/^(\s*•\s+)/gm, '<li class="ml-6 mb-3 pl-2 relative before:content-["•"] before:text-blue-500 before:font-bold before:absolute before:-left-4">')
+    .replace(/^(\s*\d+\.\s+)/gm, '<li class="ml-6 mb-3 pl-2 list-decimal marker:text-blue-500 marker:font-semibold">')
     // Format bullet points
-    .replace(/^(\s*-\s+)/gm, '<li class="ml-4 mb-2">')
-    // Format paragraphs
-    .replace(/\n\n/g, '</p><p class="mb-4 text-gray-700 leading-relaxed">')
+    .replace(/^(\s*-\s+)/gm, '<li class="ml-6 mb-3 pl-2 relative before:content-["-"] before:text-blue-500 before:font-bold before:absolute before:-left-4">')
+    // Format paragraphs with better spacing
+    .replace(/\n\n/g, '</p><p class="mb-6 text-gray-700 leading-relaxed text-base">')
     // Format bold text
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
-    // Format dividers
-    .replace(/⸻/g, '<hr class="my-8 border-gray-200">')
-    // Clean up extra formatting
-    .replace(/<\/p><p[^>]*>(\s*<h3)/g, '$1')
-    .replace(/<\/h3>\s*<p[^>]*>/g, '</h3>')
-    .replace(/<p[^>]*>\s*<\/p>/g, '');
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
+    // Format emphasis
+    .replace(/\*(.*?)\*/g, '<em class="italic text-gray-800">$1</em>')
+    // Format dividers with better styling
+    .replace(/⸻/g, '<hr class="my-10 border-t-2 border-gray-200">')
+    // Clean up formatting issues
+    .replace(/<\/p><p[^>]*>(\s*<h[23])/g, '$1')
+    .replace(/<\/h[23]>\s*<p[^>]*>/g, '</h3>')
+    .replace(/<p[^>]*>\s*<\/p>/g, '')
+    // Add proper list containers
+    .replace(/(<li[^>]*>.*?<\/li>\s*)+/g, '<ul class="space-y-2 mb-6">$&</ul>')
+    // Clean up nested formatting
+    .replace(/<ul[^>]*>\s*<\/ul>/g, '');
 
-  return `<div class="text-gray-700"><p class="mb-4 text-gray-700 leading-relaxed">${formattedContent}</p></div>`;
+  return `<div class="text-gray-700 space-y-4"><p class="mb-6 text-gray-700 leading-relaxed text-base">${formattedContent}</p></div>`;
 };
 
 export default LegalModal;
