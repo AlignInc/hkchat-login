@@ -27,13 +27,13 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className={`text-xl font-semibold text-gray-900 ${isChinese ? 'font-noto-sans-tc' : ''}`}>
+          <DialogTitle className={`text-xl font-semibold text-gray-900 ${isChinese ? 'font-source-han-sans' : ''}`}>
             {title}
           </DialogTitle>
         </DialogHeader>
         <div className="mt-4">
           <div 
-            className={`prose prose-sm max-w-none leading-relaxed ${isChinese ? 'font-noto-sans-tc' : 'font-sans'}`}
+            className={`prose prose-sm max-w-none leading-relaxed ${isChinese ? 'font-source-han-sans' : 'font-sans'}`}
             dangerouslySetInnerHTML={{ __html: formatContent(content, isChinese) }}
           />
         </div>

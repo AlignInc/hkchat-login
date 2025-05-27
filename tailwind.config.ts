@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				'source-han-sans': ['Source Han Sans', 'system-ui', '-apple-system', 'sans-serif'],
 				'noto-sans-tc': ['Noto Sans TC', 'sans-serif'],
 				'noto-sans-sc': ['Noto Sans SC', 'sans-serif'],
 			},
