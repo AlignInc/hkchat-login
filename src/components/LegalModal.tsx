@@ -32,7 +32,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
           </DialogTitle>
         </DialogHeader>
         <div className="mt-8">
-          <style>{`
+          <style jsx>{`
             .privacy-policy-content,
             .terms-content {
               font-family: ${isChinese ? "'Source Han Sans', system-ui, -apple-system, sans-serif" : "'system-ui', -apple-system, sans-serif"};
