@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 export type Language = 'zh-HK' | 'zh-CN' | 'en';
@@ -269,20 +270,20 @@ HKChat（「我們」、「本公司」）重視用戶隱私，致力於保護�
 <h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">5. 监控</h3>
 
 我们不会主动监控使用者向本服务、于本服务或通过本服务提交、输入、传输或发送的输入内容或输出内容，也不会保证该内容的准确性、完整性、合法性或质量。可是，我们将考虑有关本服务上或通过本服务提供的输出内容被指称为侵权或不当或非法之投诉。投诉人有责任提交所有相关资料以证实其投诉，并向我们提供我们可能要求的所有资料以支持其投诉。在收到所有相关支持证据后，我们将处理并调查该投诉，并将真诚地采取适当行动，其中可能包括但不限于在我们认为适当的情况下停用、移除或撤下被指称为侵权的内容及材料。我们并不保证我们会在我们认为不适当的情况下就此采取任何行动，且我们不对与该等投诉相关的任何作为或不作为负责。此外，我们保留权利，在我们唯一及绝对酌情权下认为合适并在不发出警告的情况下，从本服务删除或扣起任何内容、输入内容或输出内容。 任何投诉可电邮至service@hkgai.org或以书面方式寄往香港九龙清水湾香港科技大学李兆基大楼7楼7028室。任何侵权投诉或通知应以书面形式提交，并至少包含以下资讯：- (a)	对声称受到侵权的作品以及该作品的拥有者的充分识别 (b)	对声称为侵权或为侵权活动对象的活动或材料的充分识别，以及合理地足够的资料使我们能找出该材料或活动的所在之处； (c)	对该材料或行为如何侵犯权利拥有人的权利的充分描述； (d)	投诉人的地址、联络电话或电邮地址；及 (e)	一项声明，表明（i）尽投诉人所知所信，该投诉中的资讯是属真实准确；（ii）投诉人为版权拥有人或获授权代版权拥有人行事之人；以及（iii）投诉人明白他/她可因作出虚假陈述而招致刑事或民事法律责任。 我们保留权利：（i）要求提供进一步资料以支持投诉；（ii）停用、移除或撤下任何我们认为可能侵犯任何第三方的版权或其他权利或违反任何适用法律的材料；及/或 （iii）限制我们认为侵犯他人任何权利的任何使用者接达本服务或从本服务接达其他地方，以及采取其他行动。`,
-      'privacy.content': `港话通 (HKChat) 私隱政策
-最後更新：2025 年 05 月 09 日
+      'privacy.content': `港话通 (HKChat) 隐私政策
+最后更新：2025 年 05 月 09 日
 
-本文件說明香港生成式人工智能研發中心有限公司（以下簡稱「HKGAI」、「我們」或「本公司」）如何收集、使用、儲存、披露及保護與您（以下簡稱「閣下」）有關的個人資料，以及閣下在《個人資料（私隱）條例》（香港法例第 486 章，以下簡稱「PDPO」）及其他適用法律下所享有的權利。本政策與《港話通 (HKChat) 服務條款》構成一體；若擬使用或繼續使用本服務，請務必詳細閱讀並完全理解本政策。如閣下不同意本政策任何條款，請立即停止使用並卸載相關應用程式。
+本文件说明香港生成式人工智能研发中心有限公司（以下简称「HKGAI」、「我们」或「本公司」）如何收集、使用、储存、披露及保护与您（以下简称「阁下」）有关的个人资料，以及阁下在《个人资料（隐私）条例》（香港法例第 486 章，以下简称「PDPO」）及其他适用法律下所享有的权利。本政策与《港话通 (HKChat) 服务条款》构成一体；若拟使用或继续使用本服务，请务必详细阅读并完全理解本政策。如阁下不同意本政策任何条款，请立即停止使用并卸载相关应用程序。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">1. 我們收集的資料類別</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">1. 我们收集的资料类别</h3>
 
 <div class="my-6">
 <table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm">
 <thead class="bg-gray-50">
 <tr>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">資料类别</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">资料类别</th>
 <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">具体内容</th>
 <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">收集方式 / 来源</th>
 </tr>
@@ -291,22 +292,22 @@ HKChat（「我們」、「本公司」）重視用戶隱私，致力於保護�
 <tr class="bg-white">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">身份识别资料</td>
 <td class="border border-gray-300 px-4 py-3 text-gray-700">姓名、身份证明文件号码（如适用）、智方便登录识别符、用户名、年龄、监护人资料（如属未成年人）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下在注册、身份验证或使用本服务时主動提供</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下在注册、身份验证或使用本服务时主动提供</td>
 </tr>
 <tr class="bg-gray-50">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">联系资料</td>
 <td class="border border-gray-300 px-4 py-3 text-gray-700">电子邮件、电话号码、通讯地址</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動提供</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下主动提供</td>
 </tr>
 <tr class="bg-white">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">设备与技术资料</td>
 <td class="border border-gray-300 px-4 py-3 text-gray-700">IP 地址、设备型号、操作系统、浏览器类型、设备语言、设备识别码、崩溃日志</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">透過 Cookies、SDK 或服务器日志自动收集</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">通过 Cookies、SDK 或服务器日志自动收集</td>
 </tr>
 <tr class="bg-gray-50">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服务使用资料</td>
 <td class="border border-gray-300 px-4 py-3 text-gray-700">聊天指令（输入内容）、模型回应（输出内容）、操作记录、登录时间戳</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">于閣下使用服務過程中自动生成</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">于阁下使用服务过程中自动生成</td>
 </tr>
 <tr class="bg-white">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">交易与付款资料</td>
@@ -316,198 +317,424 @@ HKChat（「我們」、「本公司」）重視用戶隱私，致力於保護�
 <tr class="bg-gray-50">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">位置资料</td>
 <td class="border border-gray-300 px-4 py-3 text-gray-700">基于 IP 或设备 GPS 归纳之粗略地理位置</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下允许定位服务或於網絡請求中自動取得</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下允许定位服务或于网络请求中自动取得</td>
 </tr>
 <tr class="bg-white">
 <td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">营销偏好资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">訂閱狀態、推廣活動互動記錄</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動選擇或使用服務過程中生成</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">订阅状态、推广活动互动记录</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">阁下主动选择或使用服务过程中生成</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-我們只收集實際運營所需資料，若某項資訊看似多餘，請立即與我們聯絡提出質疑。
+我们只收集实际运营所需资料，若某项信息看似多余，请立即与我们联络提出质疑。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">2. 資料收集與使用目的</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">2. 资料收集与使用目的</h3>
 
-1.	提供核心功能：身份驗證、生成聊天回應、推送通知。
-2.	維運與安全：故障診斷、錯誤追蹤、濫用偵測、備份與恢復。
-3.	產品改進：機器學習模型訓練、特徵測試、統計分析。我們可能對輸入及輸出內容作脫敏後的樣本化分析。
-4.	法規遵從：遵守 PDPO、反洗錢（AML）、打擊恐怖份子資金（CFT）及其他適用法律。
-5.	行銷與推廣（可選）：透過電子郵件或應用通知向閣下發送產品更新、活動資訊；閣下可隨時退訂。
-6.	公司交易：如涉及併購、重組或資產出售，為完成盡職審查及移轉作業。
+1.	提供核心功能：身份验证、生成聊天回应、推送通知。
+2.	维运与安全：故障诊断、错误追踪、滥用侦测、备份与恢复。
+3.	产品改进：机器学习模型训练、特征测试、统计分析。我们可能对输入及输出内容作脱敏后的样本化分析。
+4.	法规遵从：遵守 PDPO、反洗钱（AML）、打击恐怖分子资金（CFT）及其他适用法律。
+5.	行销与推广（可选）：通过电子邮件或应用通知向阁下发送产品更新、活动信息；阁下可随时退订。
+6.	公司交易：如涉及并购、重组或资产出售，为完成尽职审查及移转作业。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">3. 資料分享對象</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">3. 资料分享对象</h3>
 
 <div class="my-6">
 <table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm">
 <thead class="bg-gray-50">
 <tr>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">類別</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">类别</th>
 <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">目的</th>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">保護措施</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">保护措施</th>
 </tr>
 </thead>
 <tbody>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服務供應商 / 處理者（雲端託管、CDN、支付、分析）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">協助提供與維運服務</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">與之簽署資料處理協議 (DPA)，要求遵守保密與安全標準</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服务供应商 / 处理者（云端托管、CDN、支付、分析）</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">协助提供与维运服务</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">与之签署资料处理协议 (DPA)，要求遵守保密与安全标准</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">關聯公司</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">內部合規、集中化基礎設施</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">僅限於必要職能；實施最少權限原則</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">关联公司</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">内部合规、集中化基础设施</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">仅限于必要职能；实施最少权限原则</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">司法機關、監管機構</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">法定要求、訴訟程序、執法請求</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">在符合法定程序及最小化披露原則下配合</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">司法机关、监管机构</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">法定要求、诉讼程序、执法请求</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">在符合法定程序及最小化披露原则下配合</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">潛在收購方</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">企業交易</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">於簽署保密協議後進行脫敏或受控存取</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">潜在收购方</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">企业交易</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">于签署保密协议后进行脱敏或受控存取</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-我們不會出售您的個人資料，也不允許第三方用於獨立行銷，除非事先獲得明確同意。
+我们不会出售您的个人资料，也不允许第三方用于独立行销，除非事先获得明确同意。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">4. 海外資料轉移</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">4. 海外资料转移</h3>
 
-為實現全球內容分發及彈性算力，本服務可能將資料傳輸至香港以外之地區（包括但不限於新加坡與美國）。我們將依照 PDPO 第 33 條實施等同於香港標準的保障措施，例如歐盟標準合約條款 (SCCs) 或企業約束規則 (BCRs)。
-
-⸻
-
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">5. 資料保留期限</h3>
-
-•	帳戶資料：自最後一次使用服務起計至少保存 7 年，以符合法規與統計需要。
-•	聊天紀錄：以雜湊索引方式保存不超過 24 個月，用於模型安全監控與問責；期滿自動刪除或匿名化。
-•	備份：在加密存儲中最長保留 180 天後輪替刪除。
+为实现全球内容分发及弹性算力，本服务可能将资料传输至香港以外之地区（包括但不限于新加坡与美国）。我们将依照 PDPO 第 33 条实施等同于香港标准的保障措施，例如欧盟标准合约条款 (SCCs) 或企业约束规则 (BCRs)。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">6. 資料安全</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">5. 资料保留期限</h3>
 
-•	加密：TLS 1.3 傳輸加密；靜態資料採用 AES-256 或同等級加密。
-•	存取控制：零信任架構、基於角色的授權 (RBAC)、多因素驗證 (MFA)。
-•	稽核：定期滲透測試、SOC 2 及 ISO 27001 準則。
-•	然而 無論措施多嚴謹，網絡傳輸並非絕對安全；如發現安全事故，我們將於合理時間內通報受影響用戶與監管機構。
-
-⸻
-
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">7. 閣下的權利</h3>
-
-在 PDPO 及（如適用）GDPR 等法律下，閣下享有：
-
-1.	查閱：索取我們所持有的個人資料副本。
-2.	更正：要求修正不準確或過時資料。
-3.	刪除 / 匿名化：在符合法定保存要求下，請求刪除或停止處理。
-4.	限制 / 反對處理：就直接行銷或特定目的提出反對。
-5.	資料可攜性：要求以結構化、常用及機器可讀格式移轉。
-6.	撤回同意：對於基於同意的處理，可隨時撤回；撤回不影響先前基於同意之處理合法性。
-
-可透過 service@hkgai.org 提出申請，我們於 40 日內回覆。若認為我們未妥善處理，可向香港個人資料私隱專員公署 (PCPD) 投訴。
+•	账户资料：自最后一次使用服务起计至少保存 7 年，以符合法规与统计需要。
+•	聊天记录：以哈希索引方式保存不超过 24 个月，用于模型安全监控与问责；期满自动删除或匿名化。
+•	备份：在加密存储中最长保留 180 天后轮替删除。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">8. 兒童私隱</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">6. 资料安全</h3>
 
-本服務僅限 18 歲或以上人士使用。若閣下未滿 18 歲，須由法定監護人同意並以監護人身份註冊。若我們得悉在未經監護人同意下收集任何未成年人資料，將立即刪除。
+•	加密：TLS 1.3 传输加密；静态资料采用 AES-256 或同等级加密。
+•	存取控制：零信任架构、基于角色的授权 (RBAC)、多因素验证 (MFA)。
+•	稽核：定期渗透测试、SOC 2 及 ISO 27001 准则。
+•	然而 无论措施多严谨，网络传输并非绝对安全；如发现安全事故，我们将于合理时间内通报受影响用户与监管机构。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">9. Cookies 與類似技術</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">7. 阁下的权利</h3>
 
-我們使用 Cookies、SDK、像素標籤及本地儲存 以：
+在 PDPO 及（如适用）GDPR 等法律下，阁下享有：
 
-•	記錄登入狀態、偏好及語言；
-•	進行流量分析與性能監控；
-•	提供個性化內容與選擇性行銷。
+1.	查阅：索取我们所持有的个人资料副本。
+2.	更正：要求修正不准确或过时资料。
+3.	删除 / 匿名化：在符合法定保存要求下，请求删除或停止处理。
+4.	限制 / 反对处理：就直接行销或特定目的提出反对。
+5.	资料可携性：要求以结构化、常用及机器可读格式移转。
+6.	撤回同意：对于基于同意的处理，可随时撤回；撤回不影响先前基于同意之处理合法性。
 
-閣下可於瀏覽器或裝置設定拒絕部分或全部 Cookies，但可能影響服務體驗。
+可通过 service@hkgai.org 提出申请，我们于 40 日内回复。若认为我们未妥善处理，可向香港个人资料隐私专员公署 (PCPD) 投诉。
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">8. 儿童隐私</h3>
+
+本服务仅限 18 岁或以上人士使用。若阁下未满 18 岁，须由法定监护人同意并以监护人身份注册。若我们得悉在未经监护人同意下收集任何未成年人资料，将立即删除。
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">9. Cookies 与类似技术</h3>
+
+我们使用 Cookies、SDK、像素标签及本地储存 以：
+
+•	记录登入状态、偏好及语言；
+•	进行流量分析与性能监控；
+•	提供个性化内容与选择性行销。
+
+阁下可于浏览器或装置设定拒绝部分或全部 Cookies，但可能影响服务体验。
 
 ⸻
 
 <h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">10. 政策更新</h3>
 
-我們可能因法律、技術或業務需求而不時修訂本政策。重大變更將於生效前在應用內顯示公告或向註冊電郵發送通知。若閣下在變更生效後繼續使用服務，即視為接受更新後之政策。
+我们可能因法律、技术或业务需求而不时修订本政策。重大变更将于生效前在应用内显示公告或向注册电邮发送通知。若阁下在变更生效后继续使用服务，即视为接受更新后之政策。
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">11. 聯絡方式</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">11. 联络方式</h3>
 
-•	電郵：service@hkgai.org
-•	郵寄地址：香港九龍清水灣香港科技大學李兆基大樓 7 樓 7028 室
+•	电邮：service@hkgai.org
+•	邮寄地址：香港九龙清水湾香港科技大学李兆基大楼 7 楼 7028 室
 
-如對本政策有任何疑問、請求或投訴，歡迎隨時聯絡我們。我們相信隱私保護是 AI 服務可持續的基礎，但亦鼓勵用戶保持健康的「零信任」思維，對任何資料請求或輸出內容抱持審慎態度，必要時提出疑問。我們將持續自我檢視並公開改進，讓保護不流於紙上承諾。`
-    },
-    'privacy.title': '港話通 (HKChat) 私隱政策',
-    'privacy.content': `港話通 (HKChat) 私隱政策
-最後更新：2025 年 05 月 09 日
+如对本政策有任何疑问、请求或投诉，欢迎随时联络我们。我们相信隐私保护是 AI 服务可持续的基础，但亦鼓励用户保持健康的「零信任」思维，对任何资料请求或输出内容抱持审慎态度，必要时提出疑问。我们将持续自我检视并公开改进，让保护不流于纸上承诺。`
+    }
+  },
+  'en': {
+    'app.name': 'HKChat',
+    'language.zh-hk': 'TC',
+    'language.zh-cn': 'SC',
+    'language.en': 'EN',
+    'login.welcome': 'Welcome to HKChat',
+    'login.subtitle': 'Connecting Hong Kong, Smart Conversations',
+    'login.email': 'Email Address',
+    'login.email.placeholder': 'Please enter your email address',
+    'login.password': 'Password',
+    'login.password.placeholder': 'Please enter your password',
+    'login.forgot.password': 'Forgot password?',
+    'login.button': 'Sign In',
+    'login.loading': 'Signing in...',
+    'login.iamsmart': 'Sign in with "iAM Smart"',
+    'login.or': 'or',
+    'register.title': 'Create New Account',
+    'register.subtitle': 'Join HKChat and start your future journey',
+    'register.name': 'Full Name',
+    'register.name.placeholder': 'Please enter your full name',
+    'register.confirm.password': 'Confirm Password',
+    'register.confirm.password.placeholder': 'Please re-enter your password',
+    'register.button': 'Register',
+    'register.loading': 'Registering...',
+    'register.have.account': 'Already have an account?',
+    'register.login.link': 'Sign in now',
+    'register.no.account': "Don't have an account yet?",
+    'register.link': 'Register now',
+    'validation.email.required': 'Please enter your email address',
+    'validation.email.invalid': 'Please enter a valid email address',
+    'validation.password.required': 'Please enter your password',
+    'validation.password.mismatch': 'Passwords do not match',
+    'validation.name.required': 'Please enter your name',
+    'validation.login.failed': 'Login failed, please check your credentials',
+    'success.login': 'Login successful',
+    'success.login.description': 'Welcome back!',
+    'success.register': 'Registration successful',
+    'success.register.description': 'Welcome to HKChat!',
+    'iamsmart.connecting': 'Connecting to "iAM Smart"',
+    'iamsmart.description': 'Redirecting to Government "iAM Smart" platform',
+    'footer.copyright': '© 2025 Hong Kong Generative AI Research and Development Centre Limited. All rights reserved.',
+    'legal': {
+      'agreement': 'By using this service, you agree to our',
+      'terms': 'Terms of Service',
+      'and': 'and',
+      'privacy': 'Privacy Policy',
+      'terms.title': 'HKChat Terms of Service',
+      'privacy.title': 'HKChat Privacy Policy',
+      'terms.content': `HKChat Terms of Service
+Last Updated: [09/05/2025]
 
-本文件說明香港生成式人工智能研發中心有限公司（以下簡稱「HKGAI」、「我們」或「本公司」）如何收集、使用、儲存、披露及保護與您（以下簡稱「閣下」）有關的個人資料，以及閣下在《個人資料（私隱）條例》（香港法例第 486 章，以下簡稱「PDPO」）及其他適用法律下所享有的權利。本政策與《港話通 (HKChat) 服務條款》構成一體；若擬使用或繼續使用本服務，請務必詳細閱讀並完全理解本政策。如閣下不同意本政策任何條款，請立即停止使用並卸載相關應用程式。
+Please read the following terms and conditions carefully as they apply to your use of the HKChat chatbot service. The HKChat chatbot service is provided and made available to you by Hong Kong Generative AI Research and Development Centre Limited, a company incorporated in Hong Kong with business registration number 75807504 and registered address at Room 7028, 7/F, Lee Shau Kee Building, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong ("HKGAI", "we" or "our"). HKChat is a generative artificial intelligence chatbot service that may be provided through websites, mobile applications and/or software applications ("the Service"). By downloading, accessing and/or using the Service and any of its websites, applications, pages, features, information and/or content, you agree to be bound by the terms of this agreement. If you do not understand or agree to the terms of this agreement, you should not use the Service and should uninstall any mobile applications and/or software applications related to the Service. HKGAI has the right to make updates or changes to the Service and these terms of use ("Terms of Use" or "this Agreement") from time to time that are binding on you, and you should review these terms from time to time to be aware of any updates. If you are under 18 years of age (i.e., a minor), you must have a legal guardian (such as a parent) accept this agreement as a guarantor. If you are accepting this agreement as a guarantor, you agree to guarantee that the relevant minor will comply with the terms of this agreement, and we may enforce this agreement against you in the event of breach by the relevant minor.
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">1. Registration</h3>
+
+You may need to provide certain personal information and/or register a user account with us to access the Service, including but not limited to your "iAM Smart" login details, phone number and/or one-time password sent to you. If you are required to do so: - (a) You must provide us with accurate, complete, lawful and up-to-date personal information and registration information as required by us; (b) You should keep your registration details secure and confidential, including any login details and/or one-time passwords that provide you with access to the Service. You agree that we are not responsible or liable for any unauthorized use of your user account by any other person, including any unauthorized access to the Service through your user account. (c) You authorize us to assume that any person using the Service with your login details and/or one-time password is you. You agree to be responsible for any and all related activities that access or use the Service through your login details, and agree not to transfer, lend or otherwise make your user account available to any other person for use. You also agree to maintain and promptly update any information (including but not limited to any personal information) you provide to us to keep it current, complete, accurate and lawful. Personal information you provide to us in connection with the Service, including personal information provided to create your user account, will be processed in accordance with the HKChat Privacy Policy (available at [HKChat Privacy Policy]) ("Privacy Policy").
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">2. Your Use of the Service</h3>
+
+You acknowledge that we may add, delete, remove, modify, disable, suspend, terminate or restrict certain or all parts of the Service at our sole discretion and without notice to you, and you acknowledge that: (i) you may no longer be able to use the Service to the same extent as before such events occurred, or may not be able to use the Service at all, and (ii) in such circumstances, HKGAI will not be liable to you or any third party. You agree to use the Service only for your personal and non-commercial purposes and to take full responsibility for all input content and/or output content that you submit, input and/or transmit through the Service. As between you and HKGAI, any and all rights (including but not limited to intellectual property rights) in the Service or any part thereof are and shall remain the exclusive property of HKGAI. As a condition of your use of the Service or any part thereof, you agree not to: - (a) use the Service for any illegal, unauthorized or prohibited purpose under any applicable law (whether criminal or civil); (b) transmit, input, upload, create, generate or promote any content (including but not limited to input content or output content) or engage in any activity that is harmful to you or others, including any content or activity that may be considered harassment, bullying, abuse, defamation, discrimination, offensive, threatening, intimidating, indecent, obscene, violent or vulgar; (c) intrude, break into, access, use or attempt to intrude, break into, access or use any other part of our servers and/or any data areas to which you are not authorized by us, and/or attempt to bypass any filtering or security measures, or in any way interfere with, interrupt, disrupt or limit the normal operation or functionality of the Service; (d) interfere with or disrupt networks connected to the Service, or violate the regulations, policies or procedures of such networks; (e) transmit, input, upload, create, generate or promote any content (including but not limited to input content or output content) containing viruses, Trojans, worms, time bombs, cancelbots or any other invasive or destructive routines designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment related to the Service; (f) attempt to redistribute, sell, modify, adapt, translate, reverse engineer, decompile, disassemble any part of the Service, including but not limited to attempting to access the source code, algorithms, models and/or underlying components of any applications or software related to the Service; (g) attempt to gain unauthorized access to any user accounts, login details or passwords (including one-time passwords), servers, computer systems or networks related to the Service through password cracking or any other means, or use or initiate any automated systems (such as "bots" or "web spiders") to access the Service or any networks, servers or computer systems connected to the Service; (h) when you have registered a user account, directly or indirectly allow others to use your login details and/or passwords for the Service; (i) dishonestly, fraudulently or maliciously register more than one user account; (j) without our prior written permission, copy, photograph or screenshot, communicate, transmit, reproduce, frame or distribute any element of the Service in any way, or create derivative works thereof; (k) transmit, input, upload, create, generate or promote any content (including but not limited to input content or output content) protected by intellectual property laws, trade secrets, confidentiality rights, privacy rights or publicity rights or any other applicable laws, unless you own or control the relevant rights, or have obtained all necessary consents; (l) interfere with other users' use and/or enjoyment of the Service; and/or (m) store any content or data from the Service on servers or any other storage devices, or create any database by systematically downloading and/or storing any content or data from the Service. We reserve the right but have no obligation to access your user account and/or monitor your access and use of the Service from time to time without notice to you to determine whether you comply with any applicable laws, regulations and terms and conditions, including but not limited to these Terms of Use. We reserve the right to terminate your use of the Service, whether due to your breach of this Agreement or our belief that you have any suspicion of breach of this Agreement (including but not limited to violation of any prohibited uses), or for any other reason we deem appropriate. Except for the limited, non-exclusive, personal, non-transferable, non-sublicensable and revocable license to use the Service under these Terms of Use, you will absolutely not obtain any rights or licenses in the Service.
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">3. Input and Output Content</h3>
+
+You may provide user input or instructions to the Service ("Input Content") and may receive output content generated by the Service based on your Input Content ("Output Content"). You are fully responsible for all Input Content that you provide, transmit or upload to the Service, and for any Output Content created or generated therefrom. You should ensure that all such Input Content and Output Content comply with these Terms of Use and any applicable laws. By submitting Input Content, you represent and warrant that you have all necessary rights, licenses and permissions to provide and use such Input Content in accordance with these Terms of Use, and that your use of the Service, including but not limited to the submission or upload of Input Content, and/or the creation, generation and use of any Output Content, will not infringe any third party rights and/or violate these Terms of Use and any applicable laws. Subject to applicable law and these Terms of Use, as between you and HKGAI: (a) you retain all rights, title and interest you may own or hold in your Input Content; and (b) HKGAI does not claim ownership of Output Content, and hereby assigns to you any rights, title and interest HKGAI may have in Output Content. However, you acknowledge that because Output Content is generated through artificial intelligence, due to the nature of the Service, Output Content may not be unique and may be the same or similar to Output Content received by other users of the Service. You agree to grant us a worldwide, non-exclusive, unconditional, royalty-free, transferable and perpetual right and license to use, analyze, communicate and/or transmit your Input Content and/or Output Content for the purposes of providing, maintaining, developing and improving our Service, complying with applicable laws and/or enforcing our Terms of Use, for which we need not mention you or pay you or assume any liability. To the maximum extent permitted by law, you agree to waive any moral rights you may have in or relating to Input Content and Output Content. If you do not wish your Input Content or Output Content to be used for any of the above purposes, you must immediately stop using the Service. The Service is powered by artificial intelligence and based on machine learning and large language models, which are inherently probabilistic. Therefore, Output Content may sometimes contain factual inaccuracies, omissions, errors, or may be incomplete, inaccurate, outdated or misunderstood. You acknowledge that Output Content does not represent the views of HKGAI. You should not treat any Output Content as an authoritative or reliable source of truth, factual information or professional advice. You are fully responsible for evaluating the accuracy, applicability, suitability and legality of any Output Content, including conducting human review before relying on and using Output Content. You must not use any Output Content as the basis for any action or inaction, such as any decision that may have legal or other consequences for individuals. You should be fully responsible for any actions, inactions and/or decisions based on any Output Content, including but not limited to any consequences arising from the authenticity, accuracy, reliability, suitability and/or confidentiality of Output Content.
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">4. Intellectual Property</h3>
+
+Subject to Section 3 above regarding ownership of Input Content and Output Content, any other materials and/or works used and/or provided as part of and/or in connection with the Service (including but not limited to text, images, layout design, user interface, graphics, logos, icons, brands, data compilations, source code, object code, software and other proprietary materials contained in and/or related to the Service, and their arrangement or compilation (collectively "the Content")) are owned by us, or we have been licensed to use them on a limited basis. The Content is protected by copyright, trademark, patent, design, trade secret and/or other proprietary and legal rights. Without our prior written consent, you have no rights in the Content and may not yourself and may not cause, assist or facilitate any third party to reproduce, download, reproduce, modify, publish, transmit, upload, display, redistribute, store, communicate, commercially exploit, participate in the transfer or sale, create derivative works, or in any way distribute or exploit any of the Content, or otherwise infringe any person's intellectual property rights when using the Service or the Content in whole or in part. You agree not to use the Content in any other way than expressly permitted under these Terms of Use. You further agree that, subject to Section 3 above regarding our use of Input Content and Output Content, we may freely use, disclose, adopt and modify any other ideas, concepts, know-how, proposals, suggestions, comments and other communications and materials you provide to us in connection with or on or through the Service ("Feedback"), for which we need not mention you, pay you or assume any liability to you. You hereby waive and agree to waive all and any rights and claims, including but not limited to any costs, fees, royalties, charges and/or other payments in connection with our use, disclosure, adoption and/or modification of any or all of your Feedback.
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">5. Monitoring</h3>
+
+We do not actively monitor Input Content or Output Content submitted, inputted, transmitted or sent by users to, on or through the Service, nor do we guarantee the accuracy, completeness, legality or quality of such content. However, we will consider complaints that Output Content provided on or through the Service is alleged to be infringing or inappropriate or illegal. It is the responsibility of the complainant to submit all relevant information to substantiate their complaint and to provide us with all information we may require to support their complaint. Upon receipt of all relevant supporting evidence, we will process and investigate the complaint and will in good faith take appropriate action, which may include but not be limited to disabling, removing or taking down allegedly infringing content and materials where we deem appropriate. We do not guarantee that we will take any action in this regard where we deem it inappropriate, and we are not responsible for any actions or inactions related to such complaints. In addition, we reserve the right to delete or withhold any content, Input Content or Output Content from the Service at our sole and absolute discretion and without warning where we deem fit. Any complaints may be emailed to service@hkgai.org or sent in writing to Room 7028, 7/F, Lee Shau Kee Building, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong. Any infringement complaint or notice should be submitted in writing and contain at least the following information: - (a) Sufficient identification of the work claimed to be infringed and the owner of that work (b) Sufficient identification of the activity or material claimed to be infringing or the subject of infringing activity, and reasonably sufficient information to enable us to locate the material or activity; (c) Sufficient description of how the material or conduct infringes the rights of the rights holder; (d) The complainant's address, contact telephone number or email address; and (e) A statement that (i) to the complainant's knowledge and belief, the information in the complaint is true and accurate; (ii) the complainant is the copyright owner or a person authorized to act on behalf of the copyright owner; and (iii) the complainant understands that he/she may be subject to criminal or civil liability for making false statements. We reserve the right to: (i) require further information to support the complaint; (ii) disable, remove or take down any material that we believe may infringe any third party's copyright or other rights or violate any applicable law; and/or (iii) restrict any user whom we believe infringes any rights of others from accessing the Service or accessing elsewhere from the Service, and take other actions.`,
+      'privacy.content': `HKChat Privacy Policy
+Last Updated: May 09, 2025
+
+This document explains how Hong Kong Generative AI Research and Development Centre Limited (hereinafter referred to as "HKGAI", "we" or "the Company") collects, uses, stores, discloses and protects personal data relating to you (hereinafter referred to as "you"), and your rights under the Personal Data (Privacy) Ordinance (Chapter 486 of the Laws of Hong Kong, hereinafter referred to as "PDPO") and other applicable laws. This policy forms an integral part of the HKChat Terms of Service; if you intend to use or continue to use this Service, please read and fully understand this policy in detail. If you do not agree to any terms of this policy, please immediately stop using and uninstall the relevant applications.
 
 ⸻
 
-<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">1. 我們收集的資料類別</h3>
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">1. Categories of Data We Collect</h3>
 
 <div class="my-6">
 <table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm">
 <thead class="bg-gray-50">
 <tr>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">資料类别</th>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">具体内容</th>
-<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">收集方式 / 来源</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Data Category</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Specific Content</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Collection Method / Source</th>
 </tr>
 </thead>
 <tbody>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">身份识别资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">姓名、身份证明文件号码（如适用）、智方便登录识别符、用户名、年龄、监护人资料（如属未成年人）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下在注册、身份验证或使用本服务时主動提供</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Identity Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Name, identity document number (if applicable), iAM Smart login identifier, username, age, guardian information (if minor)</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Actively provided by you during registration, authentication or use of this service</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">联系资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">电子邮件、电话号码、通讯地址</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動提供</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Contact Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Email, phone number, mailing address</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Actively provided by you</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">设备与技术资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">IP 地址、设备型号、操作系统、浏览器类型、设备语言、设备识别码、崩溃日志</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">透過 Cookies、SDK 或服务器日志自动收集</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Device & Technical Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">IP address, device model, operating system, browser type, device language, device identifier, crash logs</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Automatically collected through Cookies, SDK or server logs</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">服务使用资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">聊天指令（输入内容）、模型回应（输出内容）、操作记录、登录时间戳</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">于閣下使用服務過程中自动生成</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Service Usage Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Chat commands (input content), model responses (output content), operation records, login timestamps</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Automatically generated during your use of the service</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">交易与付款资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">信用卡号末四位、付款流水号、结算明细（如适用）</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">由第三方支付服务商收集后传递</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Transaction & Payment Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Last four digits of credit card, payment reference number, settlement details (if applicable)</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Collected by third-party payment service providers and transmitted</td>
 </tr>
 <tr class="bg-gray-50">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">位置资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">基于 IP 或设备 GPS 归纳之粗略地理位置</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下允许定位服务或於網絡請求中自動取得</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Location Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Approximate geographic location based on IP or device GPS</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Obtained when you allow location services or automatically in network requests</td>
 </tr>
 <tr class="bg-white">
-<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">营销偏好资料</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">訂閱狀態、推廣活動互動記錄</td>
-<td class="border border-gray-300 px-4 py-3 text-gray-700">閣下主動選擇或使用服務過程中生成</td>
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Marketing Preference Data</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Subscription status, promotional activity interaction records</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Generated through your active choices or during service use</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-我們
+We only collect data necessary for actual operations. If any information seems redundant, please contact us immediately to raise questions.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">2. Data Collection and Usage Purposes</h3>
+
+1.	Provide core functions: identity verification, generate chat responses, push notifications.
+2.	Operations and security: fault diagnosis, error tracking, abuse detection, backup and recovery.
+3.	Product improvement: machine learning model training, feature testing, statistical analysis. We may conduct desensitized sampling analysis of input and output content.
+4.	Regulatory compliance: comply with PDPO, Anti-Money Laundering (AML), Counter-Financing of Terrorism (CFT) and other applicable laws.
+5.	Marketing and promotion (optional): send product updates and event information to you via email or app notifications; you can unsubscribe at any time.
+6.	Corporate transactions: to complete due diligence and transfer operations in case of mergers, reorganizations or asset sales.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">3. Data Sharing Recipients</h3>
+
+<div class="my-6">
+<table class="w-full border-collapse border border-gray-300 bg-white rounded-lg overflow-hidden shadow-sm">
+<thead class="bg-gray-50">
+<tr>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Category</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Purpose</th>
+<th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Protection Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white">
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Service Providers / Processors (cloud hosting, CDN, payment, analytics)</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Assist in providing and operating services</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Sign data processing agreements (DPA) with them, requiring compliance with confidentiality and security standards</td>
+</tr>
+<tr class="bg-gray-50">
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Affiliated Companies</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Internal compliance, centralized infrastructure</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Limited to necessary functions; implement principle of least privilege</td>
+</tr>
+<tr class="bg-white">
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Judicial Authorities, Regulatory Bodies</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Legal requirements, litigation proceedings, law enforcement requests</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Cooperate under legal procedures and principle of minimal disclosure</td>
+</tr>
+<tr class="bg-gray-50">
+<td class="border border-gray-300 px-4 py-3 font-medium text-gray-800">Potential Acquirers</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Corporate transactions</td>
+<td class="border border-gray-300 px-4 py-3 text-gray-700">Conduct desensitized or controlled access after signing confidentiality agreements</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+We will not sell your personal data, nor allow third parties to use it for independent marketing, unless we obtain explicit consent in advance.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">4. Cross-border Data Transfer</h3>
+
+To achieve global content distribution and flexible computing power, this service may transfer data to regions outside Hong Kong (including but not limited to Singapore and the United States). We will implement safeguards equivalent to Hong Kong standards in accordance with Section 33 of the PDPO, such as EU Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs).
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">5. Data Retention Period</h3>
+
+•	Account data: Retained for at least 7 years from the last use of the service to comply with regulations and statistical needs.
+•	Chat records: Retained in hash-indexed format for no more than 24 months for model security monitoring and accountability; automatically deleted or anonymized upon expiration.
+•	Backups: Retained for a maximum of 180 days in encrypted storage before rotational deletion.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">6. Data Security</h3>
+
+•	Encryption: TLS 1.3 transmission encryption; static data uses AES-256 or equivalent encryption.
+•	Access control: Zero-trust architecture, role-based authorization (RBAC), multi-factor authentication (MFA).
+•	Auditing: Regular penetration testing, SOC 2 and ISO 27001 standards.
+•	However, no matter how rigorous the measures, network transmission is not absolutely secure; if security incidents are discovered, we will notify affected users and regulatory authorities within a reasonable time.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">7. Your Rights</h3>
+
+Under PDPO and (if applicable) GDPR and other laws, you enjoy:
+
+1.	Access: Request copies of personal data we hold.
+2.	Correction: Request correction of inaccurate or outdated data.
+3.	Deletion / Anonymization: Request deletion or cessation of processing under statutory retention requirements.
+4.	Restriction / Objection to processing: Object to direct marketing or specific purposes.
+5.	Data portability: Request transfer in structured, commonly used and machine-readable format.
+6.	Withdraw consent: For consent-based processing, you can withdraw at any time; withdrawal does not affect the lawfulness of prior consent-based processing.
+
+You can submit requests via service@hkgai.org, and we will respond within 40 days. If you believe we have not handled it properly, you can complain to the Hong Kong Privacy Commissioner for Personal Data (PCPD).
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">8. Children's Privacy</h3>
+
+This service is only for persons aged 18 or above. If you are under 18, you must have the consent of a legal guardian and register as a guardian. If we learn that we have collected any minor's data without guardian consent, we will delete it immediately.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">9. Cookies and Similar Technologies</h3>
+
+We use Cookies, SDK, pixel tags and local storage to:
+
+•	Record login status, preferences and language;
+•	Conduct traffic analysis and performance monitoring;
+•	Provide personalized content and selective marketing.
+
+You can refuse some or all Cookies in browser or device settings, but this may affect service experience.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">10. Policy Updates</h3>
+
+We may revise this policy from time to time due to legal, technical or business needs. Major changes will be announced in the app or sent to registered email before taking effect. If you continue to use the service after the changes take effect, it is deemed as acceptance of the updated policy.
+
+⸻
+
+<h3 class="text-lg font-semibold text-gray-900 mt-8 mb-4 border-b border-gray-200 pb-2">11. Contact Information</h3>
+
+•	Email: service@hkgai.org
+•	Mailing address: Room 7028, 7/F, Lee Shau Kee Building, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong
+
+If you have any questions, requests or complaints about this policy, please feel free to contact us at any time. We believe privacy protection is the foundation of sustainable AI services, but we also encourage users to maintain a healthy "zero trust" mindset, be cautious about any data requests or output content, and raise questions when necessary. We will continue to self-examine and openly improve, ensuring protection is not just a paper promise.`
+    }
+  }
+};
+
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguage] = useState<Language>('zh-HK');
+
+  const t = (key: string): string => {
+    const keys = key.split('.');
+    let value: any = translations[language];
+    
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    
+    return value || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
+};
