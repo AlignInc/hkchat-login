@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -218,7 +217,6 @@ const Index = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {// ... keep existing code (form fields and submission logic)}
               {isRegisterMode && (
                 <div className="space-y-2">
                   <Label htmlFor="name" className={`text-sm font-medium text-gray-700 ${language === 'en' ? '' : 'font-source-han-sans'}`}>
