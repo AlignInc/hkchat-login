@@ -4,16 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { Eye, EyeOff, Mail, Lock, Smartphone } from 'lucide-react';
+import { Eye, EyeOff, Smartphone, User } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
+import { useLanguage } from '@/hooks/useLanguage';
+import LegalModal from '@/components/LegalModal';
+import FloatingParticles from '@/components/FloatingParticles';
 
 const Index = () => {
+  const { language, setLanguage, t } = useLanguage();
+  const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'terms' | 'privacy' | null }>({
+    isOpen: false,
+    type: null
+  });
 
   // Auto-focus email input on load
   useEffect(() => {
@@ -21,46 +35,58 @@ const Index = () => {
     if (emailInput) {
       emailInput.focus();
     }
-  }, []);
+  }, [isRegisterMode]);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleEmailLogin = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEmailError('');
     setPasswordError('');
+    setNameError('');
+    setConfirmPasswordError('');
 
     // Validation
     if (!email) {
-      setEmailError('請輸入電郵地址');
+      setEmailError(t('validation.email.required'));
       return;
     }
     if (!validateEmail(email)) {
-      setEmailError('請輸入有效的電郵地址');
+      setEmailError(t('validation.email.invalid'));
       return;
     }
     if (!password) {
-      setPasswordError('密碼不能為空');
+      setPasswordError(t('validation.password.required'));
       return;
+    }
+    if (isRegisterMode) {
+      if (!name) {
+        setNameError(t('validation.name.required'));
+        return;
+      }
+      if (password !== confirmPassword) {
+        setConfirmPasswordError(t('validation.password.mismatch'));
+        return;
+      }
     }
 
     setIsLoading(true);
     
-    // Simulate login process
+    // Simulate login/register process
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
       toast({
-        title: "登入成功",
-        description: "正在跳轉到港話通服務...",
+        title: t(isRegisterMode ? 'success.register' : 'success.login'),
+        description: t(isRegisterMode ? 'success.register.description' : 'success.login.description'),
         duration: 2000,
       });
     } catch (error) {
       toast({
-        title: "登入失敗",
-        description: "電郵地址或密碼錯誤，請重新輸入",
+        title: t(isRegisterMode ? 'Register Failed' : 'Login Failed'),
+        description: t('validation.login.failed'),
         variant: "destructive",
       });
     } finally {
@@ -70,8 +96,8 @@ const Index = () => {
 
   const handleIAMSmartLogin = () => {
     toast({
-      title: "正在連接智方便",
-      description: "即將跳轉到智方便認證頁面...",
+      title: t('iamsmart.connecting'),
+      description: t('iamsmart.description'),
     });
     // Simulate iAM Smart redirect
     setTimeout(() => {
@@ -79,45 +105,119 @@ const Index = () => {
     }, 500);
   };
 
+  const toggleMode = () => {
+    setIsRegisterMode(!isRegisterMode);
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setName('');
+    setEmailError('');
+    setPasswordError('');
+    setNameError('');
+    setConfirmPasswordError('');
+  };
+
+  const openLegalModal = (type: 'terms' | 'privacy') => {
+    setLegalModal({ isOpen: true, type });
+  };
+
+  const closeLegalModal = () => {
+    setLegalModal({ isOpen: false, type: null });
+  };
+
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      {/* Simple Header */}
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <div className="min-h-screen bg-gray-50 flex flex-col relative overflow-hidden">
+      <FloatingParticles />
+      
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 px-6 py-4 relative z-10">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">港</span>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/90e1220c-cecc-4c6f-b9d0-7fff0bf235c2.png" 
+                alt="HKGAI Logo" 
+                className="w-10 h-10 object-contain animate-pulse"
+              />
             </div>
-            <h1 className="text-xl font-semibold text-gray-900">港話通</h1>
+            <h1 className="text-xl font-semibold text-gray-900">{t('app.name')}</h1>
           </div>
           
           <div className="flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
-              繁
+            <button 
+              onClick={() => setLanguage('zh-HK')}
+              className={`text-sm font-medium transition-colors ${
+                language === 'zh-HK' ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {t('language.zh-hk')}
             </button>
             <span className="text-gray-300">|</span>
-            <button className="text-gray-400 hover:text-gray-900 text-sm font-medium transition-colors">
-              EN
+            <button 
+              onClick={() => setLanguage('zh-CN')}
+              className={`text-sm font-medium transition-colors ${
+                language === 'zh-CN' ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {t('language.zh-cn')}
+            </button>
+            <span className="text-gray-300">|</span>
+            <button 
+              onClick={() => setLanguage('en')}
+              className={`text-sm font-medium transition-colors ${
+                language === 'en' ? 'text-blue-600' : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {t('language.en')}
             </button>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center px-4 py-12">
+      <main className="flex-1 flex items-center justify-center px-4 py-12 relative z-10">
         <div className="w-full max-w-md">
           {/* Title Section */}
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">歡迎回來</h2>
-            <p className="text-gray-600">登入您的港話通帳戶</p>
+          <div className="text-center mb-8 animate-fade-in">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              {t(isRegisterMode ? 'register.title' : 'login.welcome')}
+            </h2>
+            <p className="text-gray-600">
+              {t(isRegisterMode ? 'register.subtitle' : 'login.subtitle')}
+            </p>
           </div>
 
-          {/* Login Card */}
-          <Card className="bg-white border border-gray-200 shadow-sm rounded-lg p-8">
-            <form onSubmit={handleEmailLogin} className="space-y-6">
+          {/* Login/Register Card */}
+          <Card className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 animate-scale-in hover-scale transition-all duration-300">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {isRegisterMode && (
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                    {t('register.name')}
+                  </Label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Input
+                      id="name"
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full pl-10 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      placeholder={t('register.name.placeholder')}
+                      aria-describedby={nameError ? "name-error" : undefined}
+                    />
+                  </div>
+                  {nameError && (
+                    <p id="name-error" className="text-red-600 text-sm" role="alert">
+                      {nameError}
+                    </p>
+                  )}
+                </div>
+              )}
+
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                  電郵地址
+                  {t('login.email')}
                 </Label>
                 <div className="relative">
                   <Input
@@ -126,7 +226,7 @@ const Index = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="輸入您的電郵地址"
+                    placeholder={t('login.email.placeholder')}
                     aria-describedby={emailError ? "email-error" : undefined}
                     autoComplete="email"
                   />
@@ -140,7 +240,7 @@ const Index = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-medium text-gray-700">
-                  密碼
+                  {t('login.password')}
                 </Label>
                 <div className="relative">
                   <Input
@@ -149,9 +249,9 @@ const Index = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="輸入您的密碼"
+                    placeholder={t('login.password.placeholder')}
                     aria-describedby={passwordError ? "password-error" : undefined}
-                    autoComplete="current-password"
+                    autoComplete={isRegisterMode ? "new-password" : "current-password"}
                   />
                   <button
                     type="button"
@@ -169,23 +269,71 @@ const Index = () => {
                 )}
               </div>
 
-              <div className="flex justify-end">
-                <button
-                  type="button"
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none focus:underline"
-                >
-                  忘記密碼？
-                </button>
-              </div>
+              {isRegisterMode && (
+                <div className="space-y-2">
+                  <Label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
+                    {t('register.confirm.password')}
+                  </Label>
+                  <div className="relative">
+                    <Input
+                      id="confirmPassword"
+                      type={showConfirmPassword ? "text" : "password"}
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      className="w-full px-3 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      placeholder={t('register.confirm.password.placeholder')}
+                      aria-describedby={confirmPasswordError ? "confirm-password-error" : undefined}
+                      autoComplete="new-password"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none"
+                    >
+                      {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                    </button>
+                  </div>
+                  {confirmPasswordError && (
+                    <p id="confirm-password-error" className="text-red-600 text-sm" role="alert">
+                      {confirmPasswordError}
+                    </p>
+                  )}
+                </div>
+              )}
+
+              {!isRegisterMode && (
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none focus:underline transition-colors"
+                  >
+                    {t('login.forgot.password')}
+                  </button>
+                </div>
+              )}
 
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-black hover:bg-gray-800 text-white font-medium py-3 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
               >
-                {isLoading ? "登入中..." : "登入"}
+                {isLoading ? t(isRegisterMode ? 'register.loading' : 'login.loading') : t(isRegisterMode ? 'register.button' : 'login.button')}
               </Button>
             </form>
+
+            {/* Mode Toggle */}
+            <div className="text-center mt-6">
+              <span className="text-gray-600 text-sm">
+                {t(isRegisterMode ? 'register.have.account' : 'register.no.account')}
+              </span>
+              {' '}
+              <button
+                onClick={toggleMode}
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium focus:outline-none focus:underline transition-colors"
+              >
+                {t(isRegisterMode ? 'register.login.link' : 'register.link')}
+              </button>
+            </div>
 
             {/* Divider */}
             <div className="relative my-6">
@@ -193,7 +341,7 @@ const Index = () => {
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-3 bg-white text-gray-500">或</span>
+                <span className="px-3 bg-white text-gray-500">{t('login.or')}</span>
               </div>
             </div>
 
@@ -201,35 +349,51 @@ const Index = () => {
             <Button
               onClick={handleIAMSmartLogin}
               variant="outline"
-              className="w-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 font-medium py-3 rounded-md transition-colors"
+              className="w-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 font-medium py-3 rounded-md transition-all duration-200 hover:scale-105"
             >
               <Smartphone className="mr-3 w-5 h-5" />
-              使用「智方便」登入
+              {t('login.iamsmart')}
             </Button>
           </Card>
 
           {/* Legal Disclaimer */}
           <p className="text-center text-xs text-gray-500 mt-6 leading-relaxed">
-            登入即表示你同意
-            <a href="#" className="text-blue-600 hover:text-blue-800 underline transition-colors focus:outline-none">
-              《服務條款》
-            </a>
-            及
-            <a href="#" className="text-blue-600 hover:text-blue-800 underline transition-colors focus:outline-none">
-              《私隱政策》
-            </a>
+            {t('legal.agreement')}
+            {' '}
+            <button
+              onClick={() => openLegalModal('terms')}
+              className="text-blue-600 hover:text-blue-800 underline transition-colors focus:outline-none"
+            >
+              {t('legal.terms')}
+            </button>
+            {' '}
+            {t('legal.and')}
+            {' '}
+            <button
+              onClick={() => openLegalModal('privacy')}
+              className="text-blue-600 hover:text-blue-800 underline transition-colors focus:outline-none"
+            >
+              {t('legal.privacy')}
+            </button>
           </p>
         </div>
       </main>
 
-      {/* Simple Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 py-4">
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-4 relative z-10">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm text-gray-500">
-            © 2024 香港特別行政區政府 版權所有
+            {t('footer.copyright')}
           </p>
         </div>
       </footer>
+
+      {/* Legal Modal */}
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        onClose={closeLegalModal}
+        type={legalModal.type || 'terms'}
+      />
     </div>
   );
 };
