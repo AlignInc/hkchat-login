@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
-import { Eye, EyeOff, Smartphone } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import { useLanguage } from '@/hooks/useLanguage';
 import LegalModal from '@/components/LegalModal';
@@ -190,13 +191,17 @@ const Index = () => {
 
           {/* Login/Register Card */}
           <Card className="bg-white border border-gray-200 shadow-lg rounded-lg p-8 animate-scale-in hover-scale transition-all duration-300">
-            {/* iAM Smart Login - Now at the top */}
+            {/* iAM Smart Login - Now at the top with colorful icon */}
             <Button
               onClick={handleIAMSmartLogin}
               variant="outline"
               className={`w-full border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 font-medium py-3 rounded-md transition-all duration-200 hover:scale-105 mb-6 ${language === 'en' ? '' : 'font-source-han-sans'}`}
             >
-              <Smartphone className="mr-3 w-5 h-5" />
+              <img 
+                src="/lovable-uploads/d2955ede-690f-447a-bc60-8fde4a40d8e3.png" 
+                alt="iAM Smart" 
+                className="mr-3 w-5 h-5"
+              />
               {t('login.iamsmart')}
             </Button>
 
@@ -213,6 +218,7 @@ const Index = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {// ... keep existing code (form fields and submission logic)}
               {isRegisterMode && (
                 <div className="space-y-2">
                   <Label htmlFor="name" className={`text-sm font-medium text-gray-700 ${language === 'en' ? '' : 'font-source-han-sans'}`}>
